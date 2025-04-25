@@ -1,0 +1,336 @@
+:root {
+  --primary-color: hsl(7, 88%, 67%);
+  --dark-bg: hsl(248, 70%, 10%);
+  --text-light: hsl(252, 6%, 83%);
+  --text-muted: hsl(245, 15%, 58%);
+  --input-bg: rgba(135, 132, 164, 0.2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../assets/images/pattern-squiggly-line-top.svg) right top 70px
+      no-repeat,
+    url(../assets/images/pattern-circle.svg) 800px 350px no-repeat,
+    url(../assets/images/pattern-squiggly-line-bottom-desktop.svg) left bottom -10px
+      no-repeat,
+    url(../assets/images/pattern-lines.svg) top no-repeat,
+    url(../assets/images/background-desktop.png) center/cover no-repeat,
+    linear-gradient(var(--dark-bg), var(--dark-bg));
+  background-attachment: fixed;
+  background-size: 20%, /* For the first image */ auto,
+    /* For the second image */ 30% auto,
+    /* Set the size of 'pattern-squiggly-line-bottom-desktop.svg' */ 80%,
+    /* For the fourth image */ cover; /* For the fifth image */
+  color: var(--text-light);
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  line-height: 1.3;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+main {
+  max-width: 600px;
+  width: 100%;
+  padding: 1rem;
+}
+.header {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.secure {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Form Styles */
+.form-container {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.upload-section {
+  text-align: left;
+}
+
+.upload-area {
+  background: var(--input-bg);
+  border: 2px dashed var(--text-muted);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+
+.upload-area:hover {
+  border-color: var(--primary-color);
+}
+
+.upload-area img {
+  background: rgba(135, 132, 164, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-area input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.photo-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.user-details {
+  border: none;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--text-muted);
+  border-radius: 0.3rem;
+  color: white;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+button {
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Ticket Styles */
+.ticket {
+  text-align: center;
+}
+
+.ticket-header span {
+  background: linear-gradient(to right, var(--primary-color), white);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.message {
+  font-size: 1rem;
+  max-width: 390px;
+  margin: 1rem auto 2rem;
+}
+
+.message span {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.ticket-details {
+  background: url(../assets/images/pattern-ticket.svg) center/contain no-repeat;
+  background-size: 500px 200px;
+  padding: 2rem;
+  padding-left: 5rem;
+  text-align: left;
+}
+
+.ticket-logo img {
+  max-width: 200px;
+}
+
+.ticket-logo p {
+  font-size: 0.9rem;
+  margin: 0.1rem 0 3rem;
+  margin-left: 40px;
+}
+
+.attendee-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  /* width: 400px; */
+}
+
+#previewImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 15%;
+  object-fit: cover;
+}
+#ticketName {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+#ticketGithub {
+  color: hsl(252, 6%, 83%);
+  font-size: 1rem;
+  font-weight: 400;
+}
+#ticketGithub img {
+  height: 20px;
+  width: 20px;
+}
+.attendee-details p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+.github-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px;
+  vertical-align: middle; /* Aligns icon with text */
+  margin-right: 5px; /* Space between icon and username */
+}
+
+.attribution {
+  font-size: 0.7rem;
+  padding: 1rem;
+}
+
+.attribution a {
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 620px) {
+  .ticket-details {
+    padding-left: 4rem;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 1rem;
+  }
+
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+
+  #previewImage {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 554px) {
+  .ticket-details {
+    padding-left: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .ticket-details {
+    background-size: 350px 200px;
+    padding-left: 3rem;
+  }
+  .ticket-logo img {
+    max-width: 150px;
+  }
+  #previewImage {
+    width: 50px;
+    height: 50px;
+  }
+  .ticket-details {
+    padding-left: 2rem;
+  }
+}
+@media (max-width: 430px) {
+  .ticket-details {
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 420px) {
+  .ticket-details {
+    background-size: 300px 200px;
+    padding-left: 1rem;
+  }
+  #previewImage {
+    width: 40px;
+    height: 40px;
+  }
+  #ticketName {
+    font-size: 1rem;
+  }
+  .ticket-logo p {
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 367px) {
+  .ticket-details {
+    background-size: 250px 200px;
+  }
+  #ticketName {
+    font-size: 0.7rem;
+  }
+  #ticketGithub {
+    font-size: 0.7rem;
+  }
+  .ticket-logo img {
+    max-width: 130px;
+  }
+  .ticket-logo p {
+    font-size: 0.7rem;
+    margin-left: 30px;
+  }
+}
